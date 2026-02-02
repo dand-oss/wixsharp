@@ -6,10 +6,13 @@
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWindowsForms>true</UseWindowsForms>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+        <!-- Enable cross-platform building for CI/development on Linux/Mac -->
+        <EnableWindowsTargeting>true</EnableWindowsTargeting>
         <!--<PublishAot>true</PublishAot>-->
         <RootNamespace>WixSharp</RootNamespace>
-        <SignAssembly>True</SignAssembly>
-        <AssemblyOriginatorKeyFile>..\..\WixSharp\WixSharpStrongName.snk</AssemblyOriginatorKeyFile>
+        <!-- Disable signing for local builds (key file not in repo) -->
+        <SignAssembly>False</SignAssembly>
+        <!--<AssemblyOriginatorKeyFile>..\..\WixSharp\WixSharpStrongName.snk</AssemblyOriginatorKeyFile>-->
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <IncludeSymbols>True</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
